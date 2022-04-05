@@ -1,0 +1,153 @@
+/* REMOVING ALL MARGINS */
+* {
+  margin: 0;
+}
+/* BASIC LAYOUT OF APP */
+.App {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-image: url(https://img.freepik.com/free-photo/flat-lay-workspace-table-desk-with-laptop-computer-office-supplies-coffee-cup-tablet-mobile-smartphone-color-background_44289-2013.jpg?w=1060);
+  background-size: cover;
+}
+.appBody {
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+  margin-top: -50px;
+  height: 90vh;
+  width: 75vw;
+  overflow: scroll;
+  box-shadow: -1px 4px 6px rgba(0, 0, 0, 0.75);
+}
+/* HIDING SCROLLBAR */
+.appBody::-webkit-scrollbar {
+  display: none;
+}
+.center {
+  text-align: center;
+}
+
+/* PAGE HEADING */
+.heading {
+  /* background-image: url(https://www.zembula.com/wp-content/uploads/2019/10/header-background-01.png); */
+  background-image: url(https://gulpanra.com/wp-content/uploads/2016/02/header-1-300x85.png);
+  background-size: cover;
+  height: 15vh;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  text-align: center;
+}
+/* DESCRIPTION CONTAINER */
+.description-container {
+  margin-top: 5px;
+  padding: 1vh;
+  height: auto;
+  width: 65vw;
+  align-items: center;
+  margin-left: 5vw;
+  background-color: rgb(255, 255, 248);
+
+  box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.75);
+}
+.desc {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.descInput {
+  padding: 4px;
+  text-align: center;
+  margin-left: 11vw;
+  width: 40vw;
+  outline-width: 0;
+  border: 0;
+  border-radius: 10px;
+  border-bottom: 2px solid rgb(0, 138, 192);
+}
+/* CATEGORY AND DUE DATE CONTAINER */
+.category-duedate {
+  display: flex;
+  flex-direction: row;
+  padding: 1vh;
+  height: 9vh;
+  width: 65vw;
+  align-items: center;
+  margin-left: 5vw;
+  background-color: rgb(255, 255, 248);
+  justify-content: space-between;
+
+  box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.75);
+}
+.categoryInput {
+  padding: 4px;
+  text-align: center;
+  /* margin-left: 5vw; */
+  width: 20vw;
+  outline-width: 0;
+  border: 0;
+  border-radius: 10px;
+  border-bottom: 2px solid rgb(141, 76, 222);
+}
+/* STYLING FOR ADD AND DELETE BUTTONS */
+.buttons {
+  margin-top: 5px;
+  padding: 1vh;
+  height: 9vh;
+  width: 65vw;
+  align-items: center;
+  /* margin-left: 5vw; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.addButton {
+  margin: 0.5vh;
+  margin-left: 15vh;
+
+  height: 5vh;
+  width: 24vw;
+  /* margin-left: 5vw; */
+  border-color: rgb(178, 228, 0);
+  background-color: rgb(136, 228, 50);
+  box-shadow: -1px 2px 4px rgba(119, 204, 7, 0.75);
+}
+.deleteButton {
+  margin: 0.5vh;
+
+  height: 5vh;
+  width: 24vw;
+  /* margin-right: 3vw; */
+  border-color: rgb(204, 88, 10);
+  background-color: rgb(194, 63, 63);
+  box-shadow: -1px 2px 4px rgba(204, 7, 7, 0.75);
+}
+
+/* TASK LISTS SECTION */
+.taskListHeading {
+  text-align: center;
+  background-image: linear-gradient(to right, cyan, transparent);
+}
+
+th {
+  margin: auto;
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+.task-category {
+  height: 40px !important;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+
+  box-shadow: -1px 2px 4px rgba(18, 151, 228, 0.75);
+}
+
+/* DELETE ICON FOR INDIVIDUAL DELETES */
+#delete-todo {
+  color: red;
+}
+#delete-todo:hover {
+  color: rgb(95, 20, 20);
+}

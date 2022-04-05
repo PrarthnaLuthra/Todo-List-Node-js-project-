@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body class="App">
+      <div class="appBody" >
+    <h1 class="heading">TODOS APP</h1>
+    <section  >
+
+      
+        
+        <form action="/create-task" method="POST">
+          <!--for getting description-->
+          <div class="InputTask">
+            <div class="description-container">
+                <h3 class="desc"><i>Description</i></h3>
+              <input class="descInput"
+                id="description"
+                type="text"
+                name="description"
+                placeholder="What Do You Need To Do?"
+                required
+              />
+            </div>
+            <div class="category-duedate">
+            <!--Category container-->
+            <div class="category-container">
+                <h3 class="desc"><i>Choose Category</i></h3>
+             
+
+              <!--DROPDOWN LIST-->
+
+              <select name="category" class="categoryInput">
+                <option style="display: none"></option>
+                <option value="PERSONAL">PERSONAL</option>
+                <option value="WORK">WORK</option>
+                <option value="SCHOOL">SCHOOL</option>
+                <option value="FAMILY">FAMILY</option>
+                <option value="FRIENDS">FRIENDS</option>
+                <option value="OTHER">OTHER</option>
+              </select>
+            </div>
+
+            <!--TASK DUE DATE-->
+
+            <div id="dueDate-container">
+                <h3 class="desc"><i>Set a Due Date</i></h3>
+
+              <input class="categoryInput"
+                id="inputDate"
+                type="date"
+                name="date"
+                placeholder=""
+                required
+              />
+            </div>
+          </div>
+        </div>
+         
+          <div class="buttons">
+            <!--ADD BUTTON-->
+            <div>
+              <button type="submit" class="addButton">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <i><b>ADD TASK</b></i>
+              </button>
+            </div>
+            </div>
+
+           
+        </form>
+     
+    </section>
+    <!--TASK LIST -->
+    <div class="description-container">
+      <h3 class="taskListHeading">Your Tasks....</h3>
+
+      <form action="/delete-task" method="GET" class="taskList">
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 10%">Select</th>
+              <th style="width: 50%">Task</th>
+              
+              <th style="width: 20%">Due Date</th>
+              <th style="width: 20%">Category</th>
+            </tr>
+          </thead>
+          <% for(let i of task) { %>
+
+          <tr>
+            <td ><input type="checkbox" name="<%= i._id %>" /></td>
+            <td><p id="task-description"><%= i.description %></p></td>
+          
+            <td><p id="due-date">: <%= i.date %></p></td>
+            <td class="category">
+                <p class="task-category">
+                 <%= i.category %></p>
+                  
+              </td>
+              <!--INNOVATION: DELETING INDIVIDUALLY-->
+              <td>
+                <div id="remove-task-icon">
+                  <a href="/delete-todo/?id=<%= i._id %>">
+                     <i id="delete-todo" class="fa-solid fa-delete-left"></i>
+                  </a>
+              </div>
+              </td>
+              
+             
+          </tr>
+
+          <% } %>
+        </table>
+        
+         <!--DELETE TASK-->
+
+         <div class="buttons">
+          <button type="submit" class="deleteButton" >
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i><b>DELETE TASK</b></i>
+          </button>
+        
+     </div>
+      </form>
+    </div>
+    </div>
+</div>
+  </body>
+</html>
